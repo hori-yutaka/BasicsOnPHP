@@ -64,6 +64,18 @@ form input[type="text"]:focus, form input[type="email"]:focus, form textarea:foc
     background: #4caf50;
 }
 
+.btn {
+    background: #ed572a;
+    border: none;
+    border-radius: 2px;
+    color: #e1e9fa;
+    cursor: pointer;
+    float: right;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    padding: 15px;
+}
+
 .wrap {
     max-width: 500px;
     margin: auto;
