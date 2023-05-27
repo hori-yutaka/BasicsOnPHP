@@ -13,11 +13,18 @@
 <body>
     <div class="wrap">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-            <input type="text" class="name" id="name" name="name" placeholder="Name:" value="">
-            <input type="text" class="email" id="email" name="email" placeholder="Email:" value="">
-            <textarea name="Message" class="message" id="message" placeholder="Message:"></textarea>
-            <div class="alert error"></div>
-            <div class="alert success"></div>
+            <input type="text" class="name" id="name" name="name" placeholder="Name:" value="<?php if(!$sent && isset($name)) echo $name ?>">
+            <input type="text" class="email" id="email" name="email" placeholder="Email:" value="<?php if(!$sent && isset($email)) echo $email ?>">
+            <textarea name="Message" class="message" id="message" placeholder="Message:"><?php if(!$sent && isset($message)) echo $message ?></textarea>
+            <?php if(!empty($errors)): ?>
+                <div class="alert error">
+                    <?php echo $errors ?>
+                </div>
+            <?php elseif($sent): ?>
+                <div class="alert success">
+                    <p>Email Successfully Sent</p>
+                </div>
+            <?php endif ?>
             <input type="submit" class="btn btn=primary" name="submit" value="Send Message">
         </form>
     </div>
