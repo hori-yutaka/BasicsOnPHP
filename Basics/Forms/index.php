@@ -1,7 +1,5 @@
 <?php
 
-require 'index.view.php';
-
 $sent = '';
 $errors = '';
 
@@ -12,14 +10,14 @@ if (isset($_POST['submit'])) {
 
     if(!empty($name)){
         $name = trim($name);
-        $name = filter_var($name, FILTER_SANTIZE_STRING);
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
     } else {
         $errors .= 'Please input a name<br/>';
     }
 
     if(!empty($email)){
-        $email = filter_var($email, FILTER_SANTIZE_EMAIL);
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL) {
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors .= 'Please input a valid email<br/>';
         }
     }else {
@@ -44,5 +42,7 @@ if (isset($_POST['submit'])) {
         $sent = true;
     }
 }
+
+require 'index.view.php';
 
 ?>

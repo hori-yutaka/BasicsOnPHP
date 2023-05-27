@@ -79,5 +79,5 @@ form input[type="text"]:focus, form input[type="email"]:focus, form textarea:foc
 .wrap {
     max-width: 500px;
     margin: auto;
-    width: 90px;
+    width: 90%;
 }
